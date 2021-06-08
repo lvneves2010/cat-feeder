@@ -1,0 +1,7 @@
+---
+applications:
+  - name: cat-feeder
+    memory: 24M
+    buildpacks:
+    - staticfile_buildpack
+    Cache-Control: max-age=31536000
