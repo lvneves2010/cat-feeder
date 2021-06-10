@@ -1,5 +1,5 @@
 <template>
-  <div id="Profile">
+  <div id="Capacity">
     <h1
       style="font-size: 2rem;
       font-weight: 400;
@@ -46,7 +46,7 @@ export default {
 };
 </script>
 <style>
-#Profile {
+#Capacity {
   display: flex;
   justify-content: center;
   margin: 10px;
@@ -57,7 +57,7 @@ export default {
   padding-bottom: 15px;
 }
 @media screen and (max-width: 900px) {
-  #Profile {
+  #Capacity {
     display: block;
   }
 }

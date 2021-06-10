@@ -7,13 +7,13 @@
       <Presentation />
     </transition>
     <transition name="fade" appear v-if="telaPrincipal">
-      <Profile :daily-target="dailyTarget" />
+      <Capacity :daily-target="dailyTarget" />
     </transition>
     <transition name="fade" appear v-if="telaPrincipal">
-      <Education />
+      <History />
     </transition>
     <transition name="fade" appear v-if="!telaPrincipal">
-      <Experience v-on:emitDailyTarget="changeDailyTarget" />
+      <Information v-on:emitDailyTarget="changeDailyTarget" />
     </transition>
     <transition name="fade" appear v-if="telaPrincipal">
       <cv-button @click="infoNutri">Informações Nutricionais</cv-button>
@@ -31,9 +31,9 @@
 <script>
 import Header from "./components/Header.vue";
 import Presentation from "./components/Presentation.vue";
-import Profile from "./components/Profile.vue";
-import Education from "./components/Education.vue";
-import Experience from "./components/Experience.vue";
+import Capacity from "./components/Capacity.vue";
+import History from "./components/History.vue";
+import Information from "./components/Information.vue";
 import Footer from "./components/Footer.vue";
 
 export default {
@@ -41,9 +41,9 @@ export default {
   components: {
     Header,
     Presentation,
-    Profile,
-    Education,
-    Experience,
+    Capacity,
+    History,
+    Information,
     Footer
   },
   data() {

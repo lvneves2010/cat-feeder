@@ -1,5 +1,5 @@
 <template>
-  <div id="Experience">
+  <div id="Information">
     <h1
       style="font-size: 2rem;
     font-weight: 400;
@@ -16,9 +16,17 @@
       <cv-list-item>Extrato não nitrogenado: {{ nitro }} g</cv-list-item>
     </cv-list>
     <cv-list v-else>
-      <cv-list-item>Proteina Bruta: <input id="protein" v-model="protein" /> g</cv-list-item>
-      <cv-list-item>Extrato etéreo: <input id="eter" v-model="eter" /> g</cv-list-item>
-      <cv-list-item>Extrato não nitrogenado: <input id="nitro" v-model="nitro" /> g</cv-list-item>
+      <cv-list-item
+        >Proteina Bruta:
+        <input id="protein" v-model="protein" /> g</cv-list-item
+      >
+      <cv-list-item
+        >Extrato etéreo: <input id="eter" v-model="eter" /> g</cv-list-item
+      >
+      <cv-list-item
+        >Extrato não nitrogenado:
+        <input id="nitro" v-model="nitro" /> g</cv-list-item
+      >
     </cv-list>
 
     <h1
@@ -36,20 +44,22 @@
       <cv-list-item>Idade: {{ age }} anos</cv-list-item>
       <cv-list-item>Peso: {{ weight }} Kg</cv-list-item>
       <cv-list-item>qtde diaria: {{ dailyTarget }} g</cv-list-item>
-      <cv-list-item>Sexo: {{ gender }}</cv-list-item>
     </cv-list>
     <cv-list v-else>
-      <cv-list-item>Idade: <input id="age" v-model="age"/> anos</cv-list-item>
-      <cv-list-item>Peso: <input id="weight" v-model="weight" /> Kg</cv-list-item>
-      <cv-list-item>Sexo: <input id="gender" v-model="gender" /></cv-list-item>
+      <cv-list-item>Idade: <input id="age" v-model="age" /> anos</cv-list-item>
+      <cv-list-item
+        >Peso: <input id="weight" v-model="weight" /> Kg</cv-list-item
+      >
     </cv-list>
-    <cv-button v-if="!editing" style="margin=10px" @click="editInfo">Editar</cv-button>
+    <cv-button v-if="!editing" style="margin=10px" @click="editInfo"
+      >Editar</cv-button
+    >
     <cv-button v-else style="margin=10px" @click="saveInfo">Salvar</cv-button>
   </div>
 </template>
 <script>
 export default {
-  name: "Education",
+  name: "Information",
   data() {
     return {
       editing: false,
@@ -58,7 +68,6 @@ export default {
       eter: 0,
       age: 4,
       weight: 4,
-      gender: "macho",
       dailyTarget: 0
     };
   },
@@ -67,22 +76,24 @@ export default {
       this.editing = true;
     },
     saveInfo() {
+      this.nitro = this.nitro;
       this.editing = false;
       this.dailyTargetCalc();
       this.$emit("emitDailyTarget", this.dailyTarget);
     },
     dailyTargetCalc() {
-      this.dailyTarget =
-        (((this.age * this.weight) /
+      this.dailyTarget = (
+        ((this.age * this.weight) /
           (4 * this.protein + 4 * this.nitro + 9 * this.eter)) *
-        10000).toFixed(2);
+        10000
+      ).toFixed(2);
       return this.dailyTarget;
     }
   }
 };
 </script>
 <style>
-#Experience {
+#Information {
   display: flex;
   justify-content: center;
   margin: 10px;
@@ -93,7 +104,7 @@ export default {
   padding-bottom: 15px;
 }
 @media screen and (max-width: 900px) {
-  #Experience {
+  #Information {
     display: block;
   }
 }

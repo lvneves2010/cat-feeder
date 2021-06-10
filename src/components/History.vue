@@ -1,5 +1,5 @@
 <template>
-  <div id="Education">
+  <div id="History">
     <h1
       style="font-size: 2rem;
       font-weight: 400;
@@ -23,12 +23,12 @@
 </template>
 <script>
 export default {
-  name: "Education",
+  name: "History",
   props: {}
 };
 </script>
 <style>
-#Education {
+#History {
   display: flex;
   justify-content: center;
   margin: 10px;
@@ -40,7 +40,7 @@ export default {
 }
 
 @media screen and (max-width: 900px) {
-  #Education {
+  #History {
     display: block;
   }
 }
