@@ -17,11 +17,7 @@
 <script>
 export default {
   name: "Presentation",
-  props: {
-    portugues: {
-      type: Boolean
-    }
-  }
+  props: {}
 };
 </script>
 <style>

@@ -8,18 +8,7 @@
 
 <script>
 export default {
-  name: "Header",
-  data() {
-    return {
-      portugues: false
-    };
-  },
-  methods: {
-    language() {
-      this.portugues = !this.portugues;
-      this.$emit("portuguese", this.portugues);
-    }
-  }
+  name: "Header"
 };
 </script>
 <style>

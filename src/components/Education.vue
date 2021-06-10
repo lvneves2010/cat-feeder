@@ -24,11 +24,7 @@
 <script>
 export default {
   name: "Education",
-  props: {
-    portugues: {
-      type: Boolean
-    }
-  }
+  props: {}
 };
 </script>
 <style>

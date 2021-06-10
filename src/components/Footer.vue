@@ -1,25 +1,16 @@
 <template>
-  <cv-footer class="header" aria-label="Carbon Footer">
-    <cv-footer-name href="javascript:void(0)">
-      Projeto Integrador - Equipe: Guarulhos 1 - 4N.1
-    </cv-footer-name>
-  </cv-footer>
+  <div class="footer">
+    Projeto Integrador - Equipe: Guarulhos 1 - 4N.1
+  </div>
 </template>
 
 <script>
 export default {
   name: "Header",
   data() {
-    return {
-      portugues: false
-    };
+    return {};
   },
-  methods: {
-    language() {
-      this.portugues = !this.portugues;
-      this.$emit("portuguese", this.portugues);
-    }
-  }
+  methods: {}
 };
 </script>
 <style>
@@ -29,14 +20,7 @@ export default {
   padding: 1rem;
 }
 
-.link-blog {
-  text-decoration: none;
-  color: #fff;
-  margin-left: 3rem;
-}
-
-.link-blog:hover {
-  text-decoration: none;
-  color: #fff;
+.footer {
+  margin-top: 30px;
 }
 </style>

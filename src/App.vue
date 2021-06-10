@@ -1,19 +1,19 @@
 <template>
   <div id="app">
     <transition name="fade" appear>
-      <Header @portuguese="changeLanguage" />
+      <Header />
     </transition>
     <transition name="fade" appear>
-      <Presentation :portugues="portugues" />
+      <Presentation />
     </transition>
     <transition name="fade" appear v-if="telaPrincipal">
-      <Profile :portugues="portugues" />
+      <Profile :daily-target="dailyTarget" />
     </transition>
     <transition name="fade" appear v-if="telaPrincipal">
-      <Education :portugues="portugues" />
+      <Education />
     </transition>
     <transition name="fade" appear v-if="!telaPrincipal">
-      <Experience :portugues="portugues" />
+      <Experience v-on:emitDailyTarget="changeDailyTarget" />
     </transition>
     <transition name="fade" appear v-if="telaPrincipal">
       <cv-button @click="infoNutri">Informações Nutricionais</cv-button>
@@ -21,8 +21,9 @@
     <transition name="fade" appear v-if="!telaPrincipal">
       <cv-button @click="infoNutri">Voltar</cv-button>
     </transition>
+    <h1>diaria: {{ dailyTarget }}</h1>
     <transition name="fade" appear>
-      <Footer @portuguese="changeLanguage" />
+      <Footer />
     </transition>
   </div>
 </template>
@@ -47,12 +48,22 @@ export default {
   },
   data() {
     return {
-      telaPrincipal: true
+      telaPrincipal: true,
+      dailyTarget: 100,
+      protein: 100,
+      nitro: 0,
+      eter: 0,
+      age: 4,
+      weight: 4,
+      gender: "macho"
     };
   },
   methods: {
     infoNutri() {
       this.telaPrincipal = !this.telaPrincipal;
+    },
+    changeDailyTarget(value) {
+      this.dailyTarget = value;
     }
   }
 };
