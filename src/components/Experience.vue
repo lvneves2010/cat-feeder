@@ -73,8 +73,9 @@ export default {
     },
     dailyTargetCalc() {
       this.dailyTarget =
-        ((this.age * this.weight) / (this.protein + this.nitro + this.eter)) *
-        1000;
+        (((this.age * this.weight) /
+          (4 * this.protein + 4 * this.nitro + 9 * this.eter)) *
+        10000).toFixed(2);
       return this.dailyTarget;
     }
   }
