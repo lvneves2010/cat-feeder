@@ -21,7 +21,7 @@
     <transition name="fade" appear v-if="!telaPrincipal">
       <cv-button @click="infoNutri">Voltar</cv-button>
     </transition>
-    <h1>diaria: {{ dailyTarget }}</h1>
+    <!-- <h1>diaria: {{ dailyTarget }}</h1> -->
     <transition name="fade" appear>
       <Footer />
     </transition>
