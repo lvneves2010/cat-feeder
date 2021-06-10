@@ -16,17 +16,18 @@
       <cv-list-item>Extrato não nitrogenado: {{ nitro }} g</cv-list-item>
     </cv-list>
     <cv-list v-else>
-      <cv-list-item
-        >Proteina Bruta:
-        <input id="protein" v-model="protein" /> g</cv-list-item
-      >
-      <cv-list-item
-        >Extrato etéreo: <input id="eter" v-model="eter" /> g</cv-list-item
-      >
-      <cv-list-item
-        >Extrato não nitrogenado:
-        <input id="nitro" v-model="nitro" /> g</cv-list-item
-      >
+      <cv-list-item>
+        <h1>Proteina Bruta:</h1>
+        <input id="protein" v-model="protein" /> g
+      </cv-list-item>
+      <cv-list-item>
+        <h1>Extrato etéreo:</h1>
+        <input id="eter" v-model="eter" /> g
+      </cv-list-item>
+      <cv-list-item>
+        <h1>Extrato não nitrogenado:</h1>
+        <input id="nitro" v-model="nitro" /> g
+      </cv-list-item>
     </cv-list>
 
     <h1
@@ -46,10 +47,14 @@
       <cv-list-item>qtde diaria: {{ dailyTarget }} g</cv-list-item>
     </cv-list>
     <cv-list v-else>
-      <cv-list-item>Idade: <input id="age" v-model="age" /> anos</cv-list-item>
-      <cv-list-item
-        >Peso: <input id="weight" v-model="weight" /> Kg</cv-list-item
-      >
+      <cv-list-item>
+        <h1>Idade:</h1>
+        <input id="age" v-model="age" /> anos
+      </cv-list-item>
+      <cv-list-item>
+        <h1>Peso:</h1>
+        <input id="weight" v-model="weight" /> Kg
+      </cv-list-item>
     </cv-list>
     <cv-button v-if="!editing" style="margin=10px" @click="editInfo"
       >Editar</cv-button
