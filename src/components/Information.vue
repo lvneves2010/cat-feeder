@@ -68,11 +68,11 @@ export default {
   data() {
     return {
       editing: false,
-      protein: 100,
-      nitro: 0,
-      eter: 0,
-      age: 4,
-      weight: 4,
+      protein: localStorage.protein,
+      nitro: localStorage.nitro,
+      eter: localStorage.eter,
+      age: localStorage.age,
+      weight: localStorage.weight,
       dailyTarget: 0
     };
   },
@@ -81,7 +81,11 @@ export default {
       this.editing = true;
     },
     saveInfo() {
-      this.nitro = this.nitro;
+      localStorage.protein = this.protein;
+      localStorage.nitro = this.nitro;
+      localStorage.eter = this.eter;
+      localStorage.age = this.age;
+      localStorage.weight = this.weight;
       this.editing = false;
       this.dailyTargetCalc();
       this.$emit("emitDailyTarget", this.dailyTarget);
